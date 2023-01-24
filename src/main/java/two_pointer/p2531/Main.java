@@ -1,34 +1,41 @@
-package two_pointer.p1940;
+package two_pointer.p2531;
 
-import java.io.DataInputStream;
-import java.io.IOException;
+import java.io.*;
 
-public class Main2 {
+public class Main {
 
-    public void solution() throws Exception {
-        int n = nextInt();
-        int m = nextInt();
+    private void solution() throws Exception {
+        int N = nextInt();
+        int d = nextInt();
+        int k = nextInt();
+        int c = nextInt();
 
-        boolean[] ch = new boolean[10000001];
-        int[] material = new int[n];
-        for (int i = 0; i < n; i++) {
-            material[i] = nextInt();
-            if (material[i] < 0 || material[i] > 10000000) continue;
-            ch[material[i]] = true;
+        int[] sushi = new int[N];
+        int[] it = new int[d + 1];
+        for (int i = 0; i < N; i++) sushi[i] = nextInt();
+
+        int cnt = 0;
+        for (int i = 0; i < k; i++) {
+            if (it[sushi[i]] == 0) cnt++; //아직 먹지 않은 상태
+            it[sushi[i]]++; //체크
         }
 
-        int answer = 0;
-        for (int i = 0; i < (m + 1) / 2; i++) {
-            if (ch[i] && ch[m - i])
-                answer++;
+        int max = cnt;
+        for (int i = 1; i < N; i++) { //i : start
+            if (max <= cnt) max = (it[c] == 0) ? cnt + 1 : cnt; //쿠폰 초밥 포함 여부
+            int end = (i + k - 1) % N; //윈도우 크기 k 유지
+            if (it[sushi[end]] == 0) cnt++; //아직 먹지 않은 상태(뒤)
+            it[sushi[end]]++; //체크(뒤)
+            it[sushi[i - 1]]--; //제외(앞)
+            if (it[sushi[i - 1]] == 0) cnt--; //윈도우에서 제외(앞)
         }
 
-        System.out.println(answer);
+        System.out.println(max);
     }
 
     public static void main(String[] args) throws Exception {
         initFI();
-        new Main2().solution();
+        new Main().solution();
     }
 
     private static final int DEFAULT_BUFFER_SIZE = 1 << 16;
