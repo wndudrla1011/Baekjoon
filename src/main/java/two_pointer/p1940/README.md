@@ -1,4 +1,4 @@
-출처 : https://www.acmicpc.net/problem/1940
+https://www.acmicpc.net/problem/1940
 
 **주몽 (실버 IV)**
 

@@ -1,4 +1,4 @@
-출처 : https://www.acmicpc.net/problem/2559
+https://www.acmicpc.net/problem/2559
 
 **수열 (실버 III)**
 

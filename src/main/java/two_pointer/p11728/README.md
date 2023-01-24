@@ -1,4 +1,4 @@
-출처 : https://www.acmicpc.net/problem/11728
+https://www.acmicpc.net/problem/11728
 
 **배열 합치기 (실버 V)**
 
