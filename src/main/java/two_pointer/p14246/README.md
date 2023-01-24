@@ -1,4 +1,4 @@
-https://www.acmicpc.net/problem/14246
+출처 : https://www.acmicpc.net/problem/14246
 
 **K보다 큰 구간 (실버 III)**
 
