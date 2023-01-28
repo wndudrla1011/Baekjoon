@@ -34,9 +34,15 @@ https://www.acmicpc.net/problem/2559
 
 ![img_2.png](img_2.png)
 
-**출처**
+**Cases**
 
-Olympiad > 한국정보올림피아드 > KOI 2011 > 초등부 1번
+10 2<br>
+3 -2 -4 -9 0 3 7 13 8 -3<br>
+output : 21
+
+10 5<br>
+3 -2 -4 -9 0 3 7 13 8<br>
+output : 31
 
 **알고리즘 분류**
 

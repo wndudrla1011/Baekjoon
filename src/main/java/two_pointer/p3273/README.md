@@ -14,19 +14,12 @@ n개의 서로 다른 양의 정수 a1, a2, ..., an으로 이루어진 수열이
 
 문제의 조건을 만족하는 쌍의 개수를 출력한다.
 
-**예제 입력 1**
+**Cases**
 
 9 <br>
 5 12 7 10 9 1 2 3 11 <br>
-13
-
-**예제 출력 1**
-
-3
-
-**출처**
-
-Olympiad > Balkan Olympiad in Informatics > Junior Balkan Olympiad in Informatics > JBOI 2008 6번
+13<br>
+output : 3
 
 **알고리즘 분류**
 

@@ -16,4 +16,24 @@ https://www.acmicpc.net/problem/11728
 
 첫째 줄에 두 배열을 합친 후 정렬한 결과를 출력한다.
 
-![img.png](img.png)
+**Cases**
+
+2 2<br>
+3 5<br>
+2 9<br>
+output : 2 3 5 9
+
+2 1
+4 7
+1
+output : 1 4 7
+
+4 3
+2 3 5 9
+1 4 7
+output : 1 2 3 4 5 7 9
+
+**알고리즘 분류**
+
+- 정렬
+- 두 포인터
