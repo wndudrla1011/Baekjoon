@@ -2,7 +2,7 @@ package two_pointer.p2559;
 
 import java.io.*;
 
-public class Main {
+public class Main3 {
 
     public void solution() throws Exception {
         int n = nextInt();
@@ -11,14 +11,13 @@ public class Main {
         int[] temp = new int[n];
         for (int i = 0; i < n; i++) temp[i] = nextInt();
 
-        int sum = 0, max = 0;
+        int left = 0, right = k, sum = 0, max = 0;
         for (int i = 0; i < k; i++) sum += temp[i];
 
         max = sum;
 
-        for (int i = 1; i <= n - k; i++) {
-            sum = 0;
-            for (int j = i; j < i + k; j++) sum += temp[j];
+        while (right < n) {
+            sum += temp[right++] - temp[left++];
             max = Math.max(max, sum);
         }
 
@@ -27,7 +26,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         initFI();
-        new Main().solution();
+        new Main3().solution();
     }
 
     private static final int DEFAULT_BUFFER_SIZE = 1 << 16;
