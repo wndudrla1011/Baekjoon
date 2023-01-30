@@ -23,7 +23,8 @@ output : 3
 
 5<br>
 1 2 3 4 5<br>
-output : 6
+6<br>
+output : 2
 
 **알고리즘 분류**
 
