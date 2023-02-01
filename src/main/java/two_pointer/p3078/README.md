@@ -41,3 +41,9 @@ KEVIN<br>
 MALCOLM<br>
 DABNEY<br>
 output : 2
+
+**알고리즘 분류**
+
+- 자료 구조
+- 슬라이딩 윈도우
+- 큐
