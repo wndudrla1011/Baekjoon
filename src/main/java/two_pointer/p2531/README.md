@@ -38,6 +38,28 @@ https://www.acmicpc.net/problem/2531
 25<br>
 output : 5
 
+8 50 4 7<br>
+2<br>
+7<br>
+9<br>
+25<br>
+7<br>
+9<br>
+7<br>
+30<br>
+output : 4
+
+8 4 3 4<br>
+1<br>
+2<br>
+1<br>
+1<br>
+1<br>
+1<br>
+1<br>
+3<br>
+output : 4
+
 **알고리즘 분류**
 
 - 브루트포스 알고리즘

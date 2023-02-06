@@ -22,12 +22,12 @@ public class Main {
 
         int max = cnt;
         for (int i = 1; i < N; i++) { //i : start
-            if (max <= cnt) max = (it[c] == 0) ? cnt + 1 : cnt; //쿠폰 초밥 포함 여부
             int end = (i + k - 1) % N; //윈도우 크기 k 유지
             if (it[sushi[end]] == 0) cnt++; //아직 먹지 않은 상태(뒤)
             it[sushi[end]]++; //체크(뒤)
             it[sushi[i - 1]]--; //제외(앞)
             if (it[sushi[i - 1]] == 0) cnt--; //윈도우에서 제외(앞)
+            if (max <= cnt) max = (it[c] == 0) ? cnt + 1 : cnt; //쿠폰 초밥 포함 여부
         }
 
         System.out.println(max);
