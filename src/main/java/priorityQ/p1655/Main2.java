@@ -18,7 +18,7 @@ public class Main2 {
             int x = readInt();
 
             if (i % 2 == 1) {
-                if (x >= median) large.add(x);
+                if (x >= median) large.add(-x);
                 else {
                     large.add(median); //median보다 작은 수가 왔으므로 median은 large로
                     small.add(-x); //가장 큰 수를 얻기 위해 음수 취함
