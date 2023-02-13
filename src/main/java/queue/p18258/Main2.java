@@ -5,30 +5,25 @@ import java.util.StringTokenizer;
 
 public class Main2 {
 
+    static int front = 0, rear = 0;
     static int[] queue;
-    static int head = 0, tail = 0;
-    static void push(int X) { queue[tail++] = X; }
-    static int pop() { return head == tail ? -1 : queue[head++]; }
-    static int size() { return tail - head; }
-    static int empty() { return head == tail ? 1 : 0; }
-    static int front() { return head == tail ? -1 : queue[head]; }
-    static int back() { return head == tail ? -1 : queue[tail - 1];}
+    static void push(int X) {queue[rear++] = X;}
+    static int pop() {return rear - front == 0 ? -1 : queue[front++];}
+    static int size() {return rear - front;}
+    static int empty() {return rear - front == 0 ? 1 : 0;}
+    static int front() {return rear - front == 0 ? -1 : queue[front];}
+    static int back() {return rear - front == 0 ? -1 : queue[rear - 1];}
 
-    public static void main(String[] args) throws IOException {
+    public void solution() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
-
         int N = Integer.parseInt(br.readLine());
-        queue = new int[2000000];
+        queue = new int[N];
 
         StringTokenizer command;
-
         while (N-- > 0) {
             command = new StringTokenizer(br.readLine(), " ");
             switch (command.nextToken()) {
-                case "push":
-                    push(Integer.parseInt(command.nextToken()));
-                    break;
                 case "pop":
                     sb.append(pop()).append('\n');
                     break;
@@ -44,10 +39,16 @@ public class Main2 {
                 case "back":
                     sb.append(back()).append('\n');
                     break;
+                default:
+                    push(Integer.parseInt(command.nextToken()));
+                    break;
             }
         }
-
         System.out.println(sb);
+    }
+
+    public static void main(String[] args) throws Exception {
+        new Main2().solution();
     }
 
 }
