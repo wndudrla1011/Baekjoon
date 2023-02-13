@@ -1,28 +1,22 @@
 package stack.p12605;
 
 import java.io.*;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Main3 {
 
     public void solution() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
         StringBuilder sb = new StringBuilder();
-        StringTokenizer strTo;
-
-        int n = Integer.parseInt(br.readLine());
-
+        int N = Integer.parseInt(br.readLine());
         Stack<String> stack = new Stack<>();
 
-        for (int i = 0; i < n; i++) {
-            String s = br.readLine();
-            strTo = new StringTokenizer(s, " ");
-            while (strTo.hasMoreTokens()) stack.push(strTo.nextToken());
-
-            sb.append("Case #" + (i + 1) + ": ");
-
-            while (!stack.isEmpty()) sb.append(stack.pop() + " ");
+        for (int i = 1; i <= N; i++) {
+            sb.append("Case #").append(i).append(": ");
+            st = new StringTokenizer(br.readLine());
+            while (st.hasMoreTokens()) stack.push(st.nextToken());
+            while (!stack.isEmpty()) sb.append(stack.pop()).append(" ");
             sb.append('\n');
         }
 
