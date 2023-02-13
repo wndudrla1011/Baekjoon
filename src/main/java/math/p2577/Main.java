@@ -1,0 +1,28 @@
+package math.p2577;
+
+import java.io.*;
+
+public class Main {
+
+    public void solution() throws Exception {
+        String triple = String.valueOf(readInt() * readInt() * readInt());
+        int[] check = new int[10];
+
+        for (int i = 0; i < triple.length(); i++)
+            check[Integer.parseInt(triple.substring(i, i + 1))]++;
+
+        for (int i = 0; i < 10; i++)
+            System.out.println(check[i]);
+    }
+
+    public static void main(String[] args) throws Exception {
+        new Main().solution();
+    }
+
+    static int readInt() throws IOException {
+        int c, n = System.in.read() & 15;
+        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
+        return n;
+    }
+
+}
