@@ -36,7 +36,7 @@ class Heap {
     void offer(int e) {
         heap[++size] = e; //가장 뒤부터 삽입
         int i = size << 1; //트리 구조 -> 트리 높이만큼 비교
-        while ((i >>= 1) > 1)
+        while ((i >>= 1) > 1) //Down-top 비교
             if (!swap(i)) break; //절댓값 힙 조건에 맞는지 검사
     }
     int poll() {
@@ -44,7 +44,7 @@ class Heap {
         int e = heap[1]; //리프 노드의 최우측 값
         heap[1] = heap[size--]; //사이즈 줄이고, 가장 마지막 값을 루트로
         int i = 1;
-        while ((i <<= 1) <= size) {
+        while ((i <<= 1) <= size) { //Top-Down 비교
             if (i < size && compare(i + 1, i)) i++; //형제 노드 중 작은 절댓값 찾기 (좌측이 작으면 i++)
             if (!swap(i)) break; //절댓값 힙 조건에 맞는지 검사
         }
