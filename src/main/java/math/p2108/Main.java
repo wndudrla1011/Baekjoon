@@ -11,12 +11,11 @@ public class Main {
         double sum = 0;
 
         int[] arr = new int[N];
-        int[] check = new int[8001]; //음수 : 1~4000, 양수 : 4001~8000
+        int[] check = new int[8001]; //음수 : 0~3999, 양수 : 4001~8000
 
         for (int i = 0; i < N; i++) {
             arr[i] = readInt();
-            if (arr[i] <= 0) check[Math.abs(arr[i])]++;
-            else if (arr[i] > 0) check[4000 + arr[i]]++;
+            check[4000 + arr[i]]++;
             sum += arr[i];
         }
 
@@ -30,10 +29,10 @@ public class Main {
         for (int i = 0; i < N; i++) {
             if (prv == arr[i]) continue; //중복 값 제외
             if (arr[i] <= 0) {
-                if (max <= check[Math.abs(arr[i])]) {
-                    if (max == check[Math.abs(arr[i])]) number++;
+                if (max <= check[4000 + arr[i]]) {
+                    if (max == check[4000 + arr[i]]) number++;
                     else number = 1;
-                    max = check[Math.abs(arr[i])];
+                    max = check[4000 + arr[i]];
                     if (number <= 2) frequent = arr[i]; //중복 최빈값이 있다면 2번째로 작은 값
                 }
             }
