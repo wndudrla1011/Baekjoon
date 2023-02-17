@@ -37,7 +37,7 @@ https://www.acmicpc.net/problem/11899
 )))()<br>
 output : 3
 
-)))()<br>
+)(()<br>
 output : 2
 
 ))()((<br>
