@@ -1,4 +1,4 @@
-package two_pointer.p11441;
+package accumulated_sum.p11441;
 
 import java.io.*;
 
