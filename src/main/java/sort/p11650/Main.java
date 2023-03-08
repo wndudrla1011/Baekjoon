@@ -1,4 +1,4 @@
-package sorting.p11650;
+package sort.p11650;
 
 import java.io.*;
 import java.util.*;
