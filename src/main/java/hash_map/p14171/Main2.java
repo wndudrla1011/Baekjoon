@@ -29,8 +29,8 @@ public class Main2 {
             st = new StringTokenizer(br.readLine());
             String name = st.nextToken().substring(0, 2);
             String index = st.nextToken();
-            if (!map.containsKey(index)) map.put(index, currIndex++);
-            cities[i] = new City(name, map.get(index));
+            if (!map.containsKey(index)) map.put(index, currIndex++); //state code + index
+            cities[i] = new City(name, map.get(index)); //city code + index
         }
 
         int[][] adjs = new int[currIndex][currIndex];
