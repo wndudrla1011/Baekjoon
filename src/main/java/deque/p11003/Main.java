@@ -13,7 +13,7 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int L = Integer.parseInt(st.nextToken());
 
-        Deque<int[]> deque = new ArrayDeque<>();
+        Deque<int[]> deque = new ArrayDeque<>(); //<값, 인덱스>
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             int num = Integer.parseInt(st.nextToken());
