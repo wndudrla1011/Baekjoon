@@ -4,7 +4,7 @@ https://www.acmicpc.net/problem/1377
 
 **문제**
 
-버블 소트 알고리즘을 다음과 같이 C++로 작성했다. 
+버블 소트 알고리즘을 다음과 같이 C++로 작성했다.
 
 ![img.png](img.png)
 
