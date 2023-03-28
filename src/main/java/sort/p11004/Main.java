@@ -1,0 +1,25 @@
+package sort.p11004;
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+
+//        List<Integer> L = new LinkedList<>();
+        List<Integer> L = new ArrayList<>();
+        st = new StringTokenizer(br.readLine());
+
+        for (int i = 0; i < N; i++) L.add(Integer.parseInt(st.nextToken()));
+
+        Collections.sort(L);
+
+        System.out.println(L.get(K - 1));
+    }
+
+}
