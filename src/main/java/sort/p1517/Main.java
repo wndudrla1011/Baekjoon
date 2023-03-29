@@ -1,57 +1,56 @@
 package sort.p1517;
 
 import java.io.*;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
 
+    public static int[] A, tmp;
+    public static long result;
+
     public static void main(String[] args) throws IOException {
-        int N = readInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
 
-        Node[] A = new Node[N];
+        A = new int[N + 1];
+        tmp = new int[N + 1];
 
-        for (int i = 0; i < N; i++) {
-            A[i] = new Node(readInt(), i);
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 1; i <= N; i++) {
+            A[i] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(A);
-        int max = 0;
+        result = 0;
+        merge_sort(1, N);
 
-        for (int i = 0; i < N; i++) {
-            if (max < A[i].index - i)
-                max = A[i].index - i;
+        System.out.println(result);
+    }
+
+    private static void merge_sort(int s, int e) {
+        if (e - s < 1) return;
+        int m = (s + e) / 2;
+
+        merge_sort(s, m);
+        merge_sort(m + 1, e);
+
+        if (e - s + 1 >= 0) System.arraycopy(A, s, tmp, s, e - s + 1);
+
+        int k = s;
+        int index1 = s;
+        int index2 = m + 1;
+
+        while (index1 <= m && index2 <= e) { //두 그룹을 Merge 해주는 로직
+            if (tmp[index1] > tmp[index2]) {
+                A[k++] = A[index2++];
+                result += index2 - k; //뒷쪽 데이터 값이 더 작은 경우에만 swap 수행
+            } else {
+                A[k++] = A[index1++];
+            }
         }
 
-        System.out.println(max + 1);
-    }
-
-    static int readInt() throws IOException {
-        int n = 0;
-        boolean isNegative = false;
-        while (true) {
-            int input = System.in.read();
-            if (input <= 32) {
-                return isNegative ? n * -1 : n;
-            } else if (input == '-')
-                isNegative = true;
-            else
-                n = (n << 3) + (n << 1) + (input & 15);
+        for (int i = 0; i <= m - index1; i++) {
+            A[i + k] = tmp[i + index1];
         }
     }
 
-}
-
-class Node implements Comparable<Node> {
-    int value;
-    int index;
-
-    public Node(int value, int index) {
-        this.value = value;
-        this.index = index;
-    }
-
-    @Override
-    public int compareTo(Node o) {
-        return this.value - o.value;
-    }
 }
