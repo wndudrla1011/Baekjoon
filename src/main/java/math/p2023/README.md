@@ -18,7 +18,7 @@ https://www.acmicpc.net/problem/2023
 
 N자리 수 중에서 신기한 소수를 오름차순으로 정렬해서 한 줄에 하나씩 출력한다.
 
-**Caese**
+**Cases**
 
 4<br>
 output :<br>
