@@ -46,6 +46,12 @@ public class Main {
             if (!visited[i])
                 DFS(i, depth + 1);
         }
+        /*
+        * 해당 재귀 종료 -> 방문 체크 해제
+        * 1. 더 이상 진출할 위치가 없어 되돌아오는 경우
+        * 2. depth 5까지 다녀온 경우
+        * 3. 뒤로가기 라고 생각하기
+        * */
         visited[now] = false;
     }
 
