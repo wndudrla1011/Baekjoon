@@ -1,4 +1,4 @@
-package math.p2023;
+package graph.p2023;
 
 import java.io.*;
 
