@@ -50,7 +50,7 @@ public class Main2 {
 
         /*
         * 좌우상하 재귀
-        * 현재 좌표 포함해야 하므로 1 더함
+        * 누적해야 하므로 1 더함
         * */
         return 1 + DFS(y - 1, x) + DFS(y + 1, x) + DFS(y, x - 1) + DFS(y, x + 1);
     }
