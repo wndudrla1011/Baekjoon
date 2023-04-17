@@ -77,10 +77,11 @@ public class Main {
                 break;
             } else if (!visited[i]) {
                 DFS(cur, i); //다음 역 탐색
+                //인접한 역 중 순환역을 찾지 못했거나 순환역을 찾은 경우
                 if (isCycle) { //순환선에 속한 역
                     if (distance[i] == 0) { //이미 사이클에 속한 곳을 만남 -> 사이클 종료
-                        isCycle = false;
-                    } else {
+                        isCycle = false; //순환선 작업이 끝난 후에는 이 작업을 다시 수행하지 않도록
+                    } else { //순환역을 도는 중
                         distance[i] = 0;
                         q.offer(i);
                     }
