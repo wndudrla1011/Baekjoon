@@ -9,7 +9,6 @@ public class Main {
     static boolean[][] visited;
     static int[] dy = {-1, 1, 0, 0};
     static int[] dx = {0, 0, -1, 1};
-    static Queue<int[]> coast = new LinkedList<>(); //해안가(바다와 인접한 육지) 좌표
     static int landNum = 2; //섬 번호 이름
     static int N;
     static int ans = Integer.MAX_VALUE; //최소 거리
