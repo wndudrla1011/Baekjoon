@@ -28,7 +28,7 @@ public class Main {
                 return;
             }
 
-            if (emoticon_num > 0 && emoticon_num < 2000) {
+            if (emoticon_num > 0 && emoticon_num <= 2000) {
                 //1. 복사
                 if (!visited[emoticon_num][emoticon_num]) {
                     visited[emoticon_num][emoticon_num] = true;
@@ -43,7 +43,7 @@ public class Main {
             }
 
             //2. 붙여넣기
-            if (clipboard_num > 0 && emoticon_num + clipboard_num < 2000) {
+            if (clipboard_num > 0 && emoticon_num + clipboard_num <= 2000) {
                 if (!visited[emoticon_num + clipboard_num][clipboard_num]) {
                     visited[emoticon_num + clipboard_num][clipboard_num] = true;
                     q.offer(new Node(emoticon_num + clipboard_num, clipboard_num, time + 1));

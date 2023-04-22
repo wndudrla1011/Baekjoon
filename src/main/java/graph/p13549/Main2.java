@@ -32,7 +32,7 @@ public class Main2 {
 
             visited[pos] = true;
 
-            //가중치가 0인 경로이므로 pos > K 라도 최소가 나올 수 있다.
+            //논리적으로 pos > K 라도 최소가 나올 수 있다.
             if (pos * 2 <= 100000 && !visited[pos * 2]) {
                 pq.offer(new int[]{pos * 2, time});
             }
@@ -41,7 +41,7 @@ public class Main2 {
                 pq.offer(new int[]{pos - 1, time + 1});
             }
 
-            //가중치가 1인 경로이므로 pos >= K 이면 최소가 나올 수 없다.
+            //논리적으로 pos >= K 이면 최소가 나올 수 없다.
             if (pos < K && pos + 1 <= 100000 && !visited[pos + 1]) {
                 pq.offer(new int[]{pos + 1, time + 1});
             }

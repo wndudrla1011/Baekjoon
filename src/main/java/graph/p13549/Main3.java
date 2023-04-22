@@ -32,7 +32,7 @@ public class Main3 {
                 return;
             }
 
-            //가중치가 0인 경로이므로 pos > K 라도 최소가 나올 수 있다.
+            //논리적으로 pos > K 라도 최소가 나올 수 있다.
             if (now * 2 <= 200000 && time[now * 2] == 0) {
                 time[now * 2] = time[now];
                 deque.offerFirst(now * 2);
@@ -43,7 +43,7 @@ public class Main3 {
                 deque.offer(now - 1);
             }
 
-            //가중치가 1인 경로이므로 pos >= K 이면 최소가 나올 수 없다.
+            //논리적으로 pos >= K 이면 최소가 나올 수 없다.
             if (now < K && now + 1 <= 100000 && time[now + 1] == 0) {
                 time[now + 1] = time[now] + 1;
                 deque.offer(now + 1);
