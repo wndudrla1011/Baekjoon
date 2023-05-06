@@ -14,9 +14,9 @@ public class Main {
         while (e != E || s != S || m != M) {
             e++; s++; m++; year++;
 
-            if (e > 15) e = e % 16 + 1;
-            if (s > 28) s = s % 29 + 1;
-            if (m > 19) m = m % 20 + 1;
+            if (e > 15) e = 1;
+            if (s > 28) s = 1;
+            if (m > 19) m = 1;
         }
 
         System.out.println(year);
